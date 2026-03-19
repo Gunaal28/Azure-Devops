@@ -17,3 +17,12 @@ steps:
     echo Add other tasks to build, test, and deploy your project.
     echo See https://aka.ms/yaml
   displayName: 'Run a multi-line script'
+- task: PipelineTerraformTask@5
+  inputs:
+    provider: 'azurerm'
+    command: 'init'
+    backendServiceArm: 'Kubernetes-terraform-svc'
+    backendAzureRmResourceGroupName: 'kubernetes_rg'
+    backendAzureRmStorageAccountName: 'gunaal28storageaccfork8s26'
+    backendAzureRmContainerName: 'gunaal28sacontainerfork8s26'
+    backendAzureRmKey: 'kubernetes-dev.tfstate'
